@@ -13,11 +13,27 @@ Input: n = 5
 Output: ["1","2","Fizz","4","Buzz"]
 """
 
-def fizzbuzz():
+def fizzbuzz(n):
     answer = ""
-    for i in range n:
+    #Checks for the correct
+    # range(start, stop, step) <- in this order
+    for i in range(n, 0, -1):
         if ((n % 3 ==0) and (n % 5 == 0)):
             answer = answer + "FizzBuzz"
-        # rest of cases
+        elif i % 3 == 0:
+            answer = answer + "Fizz"
+        elif i % 5 == 0:
+            answer = answer + "Buzz"
+        else:
+            answer = answer + str(i)
+    #exit for loop
     return answer
 
+#Testing ~
+print("test one: " + fizzbuzz(6))
+
+print("test two: " + fizzbuzz(42))
+
+print("test tres: " + fizzbuzz(66))
+
+print("test four: " + fizzbuzz(18))
